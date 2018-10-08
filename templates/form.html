@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/" method="POST">
+    Username: <input type="text" name="username" value=''>
+    <h1> {{username_error}} </h1>
+    <br>
+    Password: <input type="password" name="password" value="">
+    <h1> {{password_error}} </h1>
+    <br>
+    Verify Password: <input type="password" name="verify_password" value=""> 
+    <h1> {{verify_password_error}} </h1>
+    <br>    
+    E-mail (optional): <input type="text" name="email" value="">
+    <h1> {{email_error}} </h1>
+    <br>
+    <input type="submit" value="Submit Query">
+</form>
+{% endblock %}
