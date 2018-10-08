@@ -12,6 +12,7 @@ def index():
 @app.route('/', methods=['POST'])
 def user_signup():    
     userStr = request.form['username']
+    userStrShow = userStr
     passStr = request.form['password']
     verifyPassStr = request.form['verify_password']
     emailStr = request.form['email']
@@ -37,7 +38,7 @@ def user_signup():
             emailError1 += "Check the length of the email address you provided."
                   
     if userStrBlankError != "" or userStrLenError != "" or passStrError != "" or verifyPassStrError != "" or emailError1 != "" or emailError2 != "":
-        return render_template('form.html', username = userStr, username_error = userStrBlankError + userStrLenError, password = passStr, password_error = passStrError, verify_password = verifyPassStr, verify_password_error = verifyPassStrError, email = emailStr, email_error = emailError1 + emailError2)
+        return render_template('form.html', username = userStrShow, username_error = userStrBlankError + " " + userStrLenError, password = "", password_error = passStrError, verify_password = "", verify_password_error = verifyPassStrError, email = emailStr, email_error = emailError1 + " " + emailError2)
     else:
         return redirect(url_for('welcome', finalUsername = userStr))
        

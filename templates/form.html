@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <form action="/" method="POST">
-    Username: <input type="text" name="username" value=''>
-    <h1> {{username_error}} </h1>
+    Username: <input type="text" name="username" value={{username}}>
+    <h3> {{username_error}} </h3>
     <br>
-    Password: <input type="password" name="password" value="">
-    <h1> {{password_error}} </h1>
+    Password: <input type="password" name="password" value={{password}}>
+    <h3> {{password_error}} </h3>
     <br>
-    Verify Password: <input type="password" name="verify_password" value=""> 
-    <h1> {{verify_password_error}} </h1>
+    Verify Password: <input type="password" name="verify_password" value={{password}}> 
+    <h3> {{verify_password_error}} </h3>
     <br>    
-    E-mail (optional): <input type="text" name="email" value="">
-    <h1> {{email_error}} </h1>
+    E-mail (optional): <input type="text" name="email" value={{email}}>
+    <h3> {{email_error}} </h3>
     <br>
     <input type="submit" value="Submit Query">
 </form>
